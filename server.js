@@ -28,7 +28,10 @@ if (serviceAccount) {
   admin.initializeApp({
     credential: admin.credential.cert(serviceAccount)
   });
-  console.log("Firebase Admin initialized successfully.");
+  console.log("Firebase Admin initialized successfully with cert.");
+} else {
+  admin.initializeApp();
+  console.log("Firebase Admin initialized successfully with default credentials.");
 }
 
 // Middleware to check for a simple API key to protect your endpoint
